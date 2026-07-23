@@ -1,7 +1,30 @@
 aid: app-onboard
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/app-onboard.png
 name: App Onboard
-description: App Onboard is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  AppOnBoard, Inc. is a Los Angeles-based technology company founded in 2016 that
+  builds AI-driven creative and advertising tools for app and game marketers. Its
+  best-known product is Buildbox, a no-code platform for making games and apps
+  without programming, and its current flagship is Quvy, an AI ad-creation and
+  testing platform that generates static, video, and concept ad variations and
+  predicts their performance against synthetic audiences before any real ad spend.
+  Quvy targets marketers, indie and studio game developers, SaaS companies, and
+  brands that want to replace slow, expensive A/B testing and agencies with fast
+  simulation-based creative optimization. AppOnBoard is backed by 500 Global; its
+  original apponboard.com domain now redirects to the Quvy product at quvy.com.
+  This profile carries the company identity and website properties; AppOnBoard
+  publishes no public API, developer portal, SDKs, or OpenAPI at this time.
 url: https://raw.githubusercontent.com/api-evangelist/app-onboard/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +32,21 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-current-product: Quvy (quvy.com)
+x-no-public-api: true
 specificationVersion: '0.20'
 created: '2026-07-17'
 modified: '2026-07-17'
 tags:
 - Company
+- Advertising
+- AdTech
+- Artificial Intelligence
+- Marketing
+- Creative
+- Game Development
+- No-Code
+- Synthetic Data
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,4 +55,27 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
+  url: https://www.quvy.com
+- type: CompanyDomain
   url: https://apponboard.com
+- type: Pricing
+  url: https://www.quvy.com/pricing/
+- type: Blog
+  url: https://www.quvy.com/all-blog-posts/
+- type: Support
+  url: https://www.quvy.com/contact/
+- type: Login
+  url: https://www.quvy.com/login/
+- type: TermsOfService
+  url: https://public.quvy.com/terms
+- type: PrivacyPolicy
+  url: https://public.quvy.com/privacy
+- type: CaseStudies
+  url: https://www.quvy.com/case-studies/
+- type: DomainSecurity
+  url: security/app-onboard-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
