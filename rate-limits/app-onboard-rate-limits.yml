@@ -1,0 +1,20 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.quvy.com/
+limit_count: 0
+note: >-
+  No rate limits are documented. AppOnBoard / Quvy publishes no API, no developer portal
+  and no API reference, so there is no rate-limit contract to capture: no published
+  limits, no windows, no burst allowances, and no documented response headers
+  (X-RateLimit-*, RateLimit-*, Retry-After) or exhaustion status code. The product does
+  meter usage — in simulations and credits — but that is a commercial quota expressed in
+  the Quvy plans (see plans/app-onboard-plans-pricing.yml), not an HTTP rate-limit signal
+  an integrator or agent can read at runtime. This is a verified zero, not an unchecked
+  field, and NO RateLimits pointer is emitted in apis.yml: a pointer would assert a
+  runtime signal the provider does not serve.
+limits: []
+headers: []
+searched:
+  - {url: 'https://www.quvy.com/sitemap.xml', status: 200, finding: 'five URLs total (home, pricing, contact, login, all-blog-posts) — no developer or reference page exists to carry limits'}
+  - {url: 'https://docs.quvy.com/', status: null, finding: NXDOMAIN}
+  - {url: 'https://developer.quvy.com/', status: null, finding: NXDOMAIN}

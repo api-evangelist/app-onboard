@@ -1,0 +1,92 @@
+generated: '2026-08-12'
+method: probed
+source: live anonymous GET of /.well-known/* on every AppOnBoard / Quvy host
+result: none
+note: >-
+  Every /.well-known/ path was probed anonymously on all four live AppOnBoard / Quvy
+  hosts. Not one returned a real document, so NO WellKnown / SecurityTxt / APICatalog
+  pointer is emitted in apis.yml — this file records a verified absence, not a surface.
+  IMPORTANT: apponboard.com answers HTTP 200 with the 578KB Quvy marketing homepage for
+  EVERY unknown path, including every /.well-known/* path. Those 200s are a Next.js SPA
+  catch-all, not documents, and are recorded below as `soft_200: true` / miss. Treating
+  them as hits would be false credit.
+
+hosts:
+  - host: https://www.quvy.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+
+  - host: https://apponboard.com
+    note: >-
+      SPA catch-all. Every path returns HTTP 200 with the identical ~578KB Quvy
+      marketing homepage. No path serves a document.
+    documents:
+      - {path: /.well-known/security.txt, status: 200, soft_200: true, content_type: text/html, hit: false}
+      - {path: /.well-known/openid-configuration, status: 200, soft_200: true, content_type: text/html, hit: false}
+      - {path: /.well-known/oauth-authorization-server, status: 200, soft_200: true, content_type: text/html, hit: false}
+      - {path: /.well-known/api-catalog, status: 200, soft_200: true, content_type: text/html, hit: false}
+      - {path: /.well-known/ai-plugin.json, status: 200, soft_200: true, content_type: text/html, hit: false}
+      - {path: /.well-known/agent-card.json, status: 200, soft_200: true, content_type: text/html, hit: false}
+      - {path: /.well-known/agent.json, status: 200, soft_200: true, content_type: text/html, hit: false}
+
+  - host: https://public.quvy.com
+    documents:
+      - {path: /.well-known/security.txt, status: 404}
+      - {path: /.well-known/openid-configuration, status: 404}
+      - {path: /.well-known/oauth-authorization-server, status: 404}
+      - {path: /.well-known/api-catalog, status: 404}
+      - {path: /.well-known/ai-plugin.json, status: 404}
+      - {path: /.well-known/agent-card.json, status: 404}
+      - {path: /.well-known/agent.json, status: 404}
+
+  - host: https://blog.quvy.com
+    note: Webflow-hosted blog; returns "Invalid .well-known request" for the namespace.
+    documents:
+      - {path: /.well-known/agent-card.json, status: 404}
+
+x-contract-discovery:
+  summary: >-
+    STEP 0b contract discovery completed against every AppOnBoard / Quvy host. No
+    published machine-readable API contract of any kind was found. The only machine
+    surface that exists is the Quvy web application's own AWS AppSync GraphQL backend,
+    which is undocumented, unadvertised, and rejects anonymous introspection.
+  openapi:
+    result: none
+    probed:
+      - {url: 'https://www.quvy.com/openapi.json', status: 200, verdict: soft-200-html-shell}
+      - {url: 'https://www.quvy.com/api/openapi.json', status: 404}
+      - {url: 'https://www.quvy.com/llms.txt', status: 200, verdict: soft-200-html-shell}
+    note: >-
+      Both 200s redirect to the marketing homepage with a ?redirect= query parameter and
+      return HTML, not a spec. No host named api.quvy.com, docs.quvy.com or
+      developer.quvy.com resolves (NXDOMAIN), so there is no API host root to probe.
+  graphql:
+    result: gated
+    endpoint: 'https://evlns23x7jdknaffuzd6ittk7a.appsync-api.us-east-1.amazonaws.com/graphql'
+    authorization: AMAZON_COGNITO_USER_POOLS (also AWS_IAM), region us-east-1
+    probed:
+      - {url: 'https://evlns23x7jdknaffuzd6ittk7a.appsync-api.us-east-1.amazonaws.com/graphql', method: POST, status: 401, body: 'UnauthorizedException: Valid authorization header not provided.'}
+    note: >-
+      This AWS AppSync endpoint is the Quvy single-page application's own backend,
+      discovered in the site's AWS Amplify client configuration. It is NOT a published
+      product API: AppOnBoard documents no API, ships no SDK, and links to no developer
+      portal or reference anywhere on quvy.com or apponboard.com. Anonymous introspection
+      returns HTTP 401, so no schema was captured. Deliberately NOT registered as an
+      apis[] entry and NOT saved as a contract — recording an undocumented internal app
+      backend as a provider API would credit AppOnBoard with an API it never shipped.
+  mcp:
+    result: none
+    note: No hosted or remote MCP server is advertised on any AppOnBoard / Quvy surface.
+  agent_card:
+    result: none
+    note: >-
+      /.well-known/agent-card.json and the legacy /.well-known/agent.json probed on all
+      four hosts. Every real answer was 404; apponboard.com's 200s are the SPA catch-all
+      serving HTML. No a2a/ artifact written — this artifact is search-only and must
+      never be authored on a provider's behalf.

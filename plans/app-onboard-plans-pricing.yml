@@ -1,0 +1,101 @@
+generated: '2026-08-12'
+method: searched
+source: https://www.quvy.com/pricing/
+billing_platforms:
+  - name: Chargebee
+    evidence: js.chargebee.com/v2/chargebee.js preloaded on every Quvy page
+  - name: Stripe
+    evidence: 'defaultStripePriceLookupKey: "Inde-Starter-3192026-USD-Monthly" in the pricing page payload'
+currency: USD
+billing_period: monthly
+free_tier: true
+free_tier_evidence: 'Primary call-to-action across the site is "Start Free" (guestCtaText / callToActionTextForGuest).'
+trials: false
+trials_evidence: 'showTrials: false in the pricing page render configuration.'
+
+plan_count: 7
+prices_published: false
+prices_note: >-
+  NO PRICE IS PUBLISHED ANONYMOUSLY. https://www.quvy.com/pricing/ returns HTTP 200 but
+  the server-rendered body reads "No plans available" and then bails to client-side
+  rendering (BAILOUT_TO_CLIENT_SIDE_RENDERING). Amounts, quotas and overage are fetched
+  at runtime from Quvy's authenticated billing backend, so every `price` below is null.
+  Recording a number here would be a guess. The tier NAMES are genuinely published — they
+  ship inside the pricing page's own payload and client bundle — and are recorded verbatim.
+
+plans:
+  - name: Individual Starter
+    plan_type: individual
+    price: null
+    currency: USD
+    billing_period: monthly
+    cta: Get Started
+    confidence: high
+    source: server-rendered pricing page payload (planCtaButtonText, defaultStripePriceLookupKey)
+  - name: Individual Premium
+    plan_type: individual
+    price: null
+    currency: USD
+    billing_period: monthly
+    cta: Choose Premium
+    limits_dimensions: [free simulations]
+    confidence: high
+    source: server-rendered pricing page payload (planCtaButtonText)
+  - name: Individual Pro
+    plan_type: individual
+    price: null
+    currency: USD
+    billing_period: monthly
+    cta: Choose Pro
+    limits_dimensions: [max simulations per month]
+    confidence: high
+    source: server-rendered pricing page payload (planCtaButtonText)
+  - name: Starter
+    plan_type: business
+    price: null
+    currency: USD
+    billing_period: monthly
+    limits_dimensions: [creatives/simulation, creatives per simulation]
+    confidence: medium
+    source: pricing page client bundle plan/feature map (/_next/static/chunks/9511-*.js)
+  - name: Professional
+    plan_type: business
+    price: null
+    currency: USD
+    billing_period: monthly
+    limits_dimensions: [targeted audiences per simulation, targeted audiences]
+    confidence: medium
+    source: pricing page client bundle plan/feature map (/_next/static/chunks/9511-*.js)
+  - name: Advanced
+    plan_type: business
+    price: null
+    currency: USD
+    billing_period: monthly
+    limits_dimensions: [max simulations per month]
+    confidence: medium
+    source: pricing page client bundle plan/feature map (/_next/static/chunks/9511-*.js)
+  - name: Enterprise
+    plan_type: business
+    price: null
+    currency: USD
+    billing_period: null
+    limits_dimensions: [flexible usage, limit structure]
+    confidence: medium
+    source: pricing page client bundle plan/feature map (/_next/static/chunks/9511-*.js)
+
+metering:
+  unit: simulation
+  secondary_units: [creatives per simulation, targeted audiences per simulation]
+  credits_model: true
+  credits_note: >-
+    Quvy meters usage in credits (creditsPaid / creditsRefunded appear in the application
+    data model). Credit-per-plan allotments are not published anonymously.
+
+api_plans: false
+api_plans_note: >-
+  These are end-user product plans for the Quvy ad-simulation application. AppOnBoard
+  publishes no API plans, no per-call pricing, and no developer tier — there is no
+  public API to price.
+
+x-evidence:
+  - {url: 'https://www.quvy.com/pricing/', status: 200, fetched: '2026-08-12'}

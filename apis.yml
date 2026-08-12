@@ -36,7 +36,7 @@ x-current-product: Quvy (quvy.com)
 x-no-public-api: true
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-08-12'
 tags:
 - Company
 - Advertising
@@ -74,8 +74,34 @@ common:
   url: https://www.quvy.com/case-studies/
 - type: DomainSecurity
   url: security/app-onboard-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/AppOnboard
+- type: Plans
+  url: plans/app-onboard-plans-pricing.yml
+- type: LLMsTxt
+  url: llms/app-onboard-llms.txt
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 4
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Quvy's entire published site is five sitemap URLs (home, pricing, contact, login,
+    blog) with no developer page of any kind, and the product's only machine surface is
+    the web app's own AWS AppSync GraphQL backend, which is undocumented and answers
+    anonymous introspection with HTTP 401 UnauthorizedException.
+  evidence:
+    - url: https://www.quvy.com/sitemap.xml
+      status: 200
+    - url: https://evlns23x7jdknaffuzd6ittk7a.appsync-api.us-east-1.amazonaws.com/graphql
+      status: 401
+    - url: https://www.quvy.com/api/openapi.json
+      status: 404
+    - url: https://www.quvy.com/.well-known/agent-card.json
+      status: 404
+    - url: https://www.quvy.com/.well-known/api-catalog
+      status: 404
+  checked: '2026-08-12'
