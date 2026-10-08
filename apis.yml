@@ -65,6 +65,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: RateLimits
+  url: rate-limits/app-onboard-rate-limits.yml
 - type: Website
   url: https://www.quvy.com
 - type: CompanyDomain
