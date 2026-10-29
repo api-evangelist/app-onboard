@@ -64,6 +64,97 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-App Onboard is a company surfaced as a portfolio company of 500-global and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+AppOnBoard, Inc. is a Los Angeles-based technology company founded in 2016 that builds AI-driven creative and advertising tools for app and game marketers. Its best-known product is Buildbox, a no-code platform for making games and apps without programming, and its current flagship is Quvy, an AI ad-creation and testing platform that generates static, video, and concept ad variations and predicts their performance against synthetic audiences before any real ad spend. Quvy targets marketers, indie and studio game developers, SaaS companies, and brands that want to replace slow, expensive A/B testing and agencies with fast simulation-based creative optimization. AppOnBoard is backed by 500 Global; its original apponboard.com domain now redirects to the Quvy product at quvy.com. This profile carries the company identity and website properties; AppOnBoard publishes no public API, developer portal, SDKs, or OpenAPI at this time.
 
-Backed by: 500-global — https://apponboard.com
+**Areas:** Company · Advertising · AdTech · Artificial Intelligence · Marketing · Creative · Game Development · No-Code · Synthetic Data
+
+## App Onboard on APIs.io
+
+Everything profiled for App Onboard is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/app-onboard/](https://apis.io/providers/app-onboard/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [App Onboard Domain Security](https://apis.io/security/app-onboard/app-onboard-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [App Onboard Plans Pricing](https://apis.io/plans/app-onboard/app-onboard-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [App Onboard Rate Limits](https://apis.io/rate-limits/app-onboard/app-onboard-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.quvy.com)
+- [Pricing](https://www.quvy.com/pricing/)
+- [Support](https://www.quvy.com/contact/)
+- [Blog](https://www.quvy.com/all-blog-posts/)
+- [Terms of service](https://public.quvy.com/terms)
+- [Privacy policy](https://public.quvy.com/privacy)
+- [GitHub](https://github.com/AppOnboard)
+
+## API Evangelist rating
+
+**Kin Score 18.1** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 59.2 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 12.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/app-onboard/](https://apis.io/providers/app-onboard/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for App Onboard: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/app-onboard/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
